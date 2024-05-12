@@ -3,15 +3,14 @@
 // 1. LinkedList class / factory, which will represent the full list.
 
 // 2. Node calss / factory, containing a value property and a link to nextNode, set both as null by default.
-
-export class Node {
+class Node {
 	constructor(value) {
 		this.value = null || value;
 		this.nextNode = null;
 	}
 }
 
-export class LinkedList {
+export default class LinkedList {
 	constructor(head = null) {
 		this.head = head;
 	}
@@ -29,9 +28,8 @@ export class LinkedList {
 // contains(value) returns true if the passed in value is the list and otherwise returns false.
 // find(value) returns the index of the node containing value, or null if not found.
 // toString represents the linkedList objects as strings, so we can print them out and preview them in the console. The format should be (value) -> (value) -> (value) -> null
-
 LinkedList.prototype.append = function (value) {
-	let node = new Node();
+	const node = new Node();
 	if (!this.head) {
 		this.head = node;
 	} else {
@@ -42,7 +40,6 @@ LinkedList.prototype.append = function (value) {
 		current.nextNode = node;
 	}
 };
-
 LinkedList.prototype.size = function () {
 	let count = 0;
 	let node = this.head;
