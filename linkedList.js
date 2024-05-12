@@ -30,8 +30,18 @@ export class LinkedList {
 // find(value) returns the index of the node containing value, or null if not found.
 // toString represents the linkedList objects as strings, so we can print them out and preview them in the console. The format should be (value) -> (value) -> (value) -> null
 
-
-
+LinkedList.prototype.append = function (value) {
+	let node = new Node();
+	if (!this.head) {
+		this.head = node;
+	} else {
+		let current = this.head;
+		while (current.nextNode) {
+			current = current.nextNode;
+		}
+		current.nextNode = node;
+	}
+};
 
 LinkedList.prototype.size = function () {
 	let count = 0;
