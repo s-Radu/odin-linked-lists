@@ -28,8 +28,10 @@ export default class LinkedList {
 // contains(value) returns true if the passed in value is the list and otherwise returns false.
 // find(value) returns the index of the node containing value, or null if not found.
 // toString represents the linkedList objects as strings, so we can print them out and preview them in the console. The format should be (value) -> (value) -> (value) -> null
+
 LinkedList.prototype.append = function (value) {
 	const node = new Node();
+
 	if (!this.head) {
 		this.head = node;
 	} else {
@@ -40,6 +42,7 @@ LinkedList.prototype.append = function (value) {
 		current.nextNode = node;
 	}
 };
+
 LinkedList.prototype.size = function () {
 	let count = 0;
 	let node = this.head;
