@@ -42,6 +42,18 @@ LinkedList.prototype.append = function (value) {
 	}
 };
 
+LinkedList.prototype.prepend = function (value) {
+	const node = new Node(value);
+	if (!this.head) {
+		this.head = node;
+	} else if (!this.head.nextNode) {
+		this.head.nextNode = node;
+	} else {
+		node.nextNode = this.head.nextNode;
+		this.head.nextNode = node;
+	}
+};
+
 LinkedList.prototype.size = function () {
 	let count = 0;
 	let node = this.head;

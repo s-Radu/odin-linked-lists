@@ -7,6 +7,7 @@ list.append('node1');
 list.append('node2');
 list.append('node3');
 list.append('node4');
+list.prepend('node5');
 
 console.log(`List size:  ${list.size()}`);
 console.log(`Values in the linked list: ${list.toString()}`);
