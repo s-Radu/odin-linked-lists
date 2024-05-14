@@ -30,8 +30,7 @@ export default class LinkedList {
 // toString represents the linkedList objects as strings, so we can print them out and preview them in the console. The format should be (value) -> (value) -> (value) -> null
 
 LinkedList.prototype.append = function (value) {
-	const node = new Node();
-
+	const node = new Node(value);
 	if (!this.head) {
 		this.head = node;
 	} else {
@@ -51,6 +50,17 @@ LinkedList.prototype.size = function () {
 		node = node.nextNode;
 	}
 	return count;
+};
+
+LinkedList.prototype.toString = function () {
+	let current = this.head;
+	let string = '';
+	while (current) {
+		string = string.concat(`${current.value} -> `);
+		current = current.nextNode;
+	}
+	string = string.concat('null');
+	return string;
 };
 
 // The functions required for extra credit:
