@@ -71,6 +71,19 @@ LinkedList.prototype.listHead = function () {
 	return node.value;
 };
 
+LinkedList.prototype.listTail = function () {
+	let node = this.head;
+	if (!node) {
+		return 'Head node not present';
+	} else {
+		let current = node;
+		while (current.nextNode) {
+			current = current.nextNode;
+		}
+		return current.value;
+	}
+};
+
 LinkedList.prototype.toString = function () {
 	let current = this.head;
 	let string = '';
