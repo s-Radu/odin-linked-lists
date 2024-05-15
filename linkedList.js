@@ -65,6 +65,12 @@ LinkedList.prototype.size = function () {
 	return count;
 };
 
+LinkedList.prototype.listHead = function () {
+	const node = this.head;
+	if (!node) return 'No head to the list';
+	return node.value;
+};
+
 LinkedList.prototype.toString = function () {
 	let current = this.head;
 	let string = '';
