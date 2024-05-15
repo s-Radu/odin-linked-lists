@@ -57,6 +57,7 @@ LinkedList.prototype.prepend = function (value) {
 LinkedList.prototype.size = function () {
 	let count = 0;
 	let node = this.head;
+
 	while (node) {
 		count++;
 		node = node.nextNode;
