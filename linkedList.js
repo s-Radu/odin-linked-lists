@@ -67,7 +67,7 @@ LinkedList.prototype.size = function () {
 };
 
 LinkedList.prototype.listHead = function () {
-	return this.head ? this.head.value : 'no head in the list';
+	return this.head ? this.head.value : 'no head in the list.';
 };
 
 LinkedList.prototype.listTail = function () {
@@ -81,16 +81,19 @@ LinkedList.prototype.listTail = function () {
 };
 
 LinkedList.prototype.atIndex = function (index) {
-	if (!this.head) return 'No head to the list';
+	if (!this.head) return 'No head to the list.';
 	let node = this.head;
 	for (let i = 0; i < index; i++) {
-		if (!node.nextNode) return 'There is no node at the provided index';
+		if (!node.nextNode) return 'There is no node at the provided index.';
 		node = node.nextNode;
 	}
 	return node.value;
 };
 
 LinkedList.prototype.nodePop = function () {
+	if (!this.head) return 'List has no head.';
+	if (!this.head.nextNode) return 'List contains only the head node.';
+
 	let node = this.head,
 		toBeDeleted;
 	while (node.nextNode) {
