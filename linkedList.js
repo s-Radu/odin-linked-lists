@@ -53,6 +53,7 @@ LinkedList.prototype.prepend = function (value) {
 		this.head.nextNode = node;
 	}
 };
+// redo size, listHead and listTail ( try not to peak so much on notes )
 
 LinkedList.prototype.size = function () {
 	let count = 0;
@@ -65,24 +66,6 @@ LinkedList.prototype.size = function () {
 	return count;
 };
 
-LinkedList.prototype.listHead = function () {
-	const node = this.head;
-	if (!node) return 'No head to the list';
-	return node.value;
-};
-
-LinkedList.prototype.listTail = function () {
-	let node = this.head;
-	if (!node) {
-		return 'Head node not present';
-	} else {
-		let current = node;
-		while (current.nextNode) {
-			current = current.nextNode;
-		}
-		return current.value;
-	}
-};
 
 LinkedList.prototype.toString = function () {
 	let current = this.head;
