@@ -80,6 +80,14 @@ LinkedList.prototype.listTail = function () {
 	return node.value;
 };
 
+LinkedList.prototype.atIndex = function (index) {
+	let node = this.head;
+	for (let i = 0; i < index; i++) {
+		node = node.nextNode;
+	}
+	return node.value;
+};
+
 LinkedList.prototype.toString = function () {
 	let current = this.head;
 	let string = '';
