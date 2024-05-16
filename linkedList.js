@@ -81,8 +81,10 @@ LinkedList.prototype.listTail = function () {
 };
 
 LinkedList.prototype.atIndex = function (index) {
+	if (!this.head) return 'No head to the list';
 	let node = this.head;
 	for (let i = 0; i < index; i++) {
+		if (!node.nextNode) return 'There is no node at the provided index';
 		node = node.nextNode;
 	}
 	return node.value;
