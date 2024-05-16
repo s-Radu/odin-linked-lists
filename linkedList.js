@@ -66,6 +66,9 @@ LinkedList.prototype.size = function () {
 	return count;
 };
 
+LinkedList.prototype.listHead = function () {
+	return this.head ? this.head.value : 'no head in the list';
+};
 
 LinkedList.prototype.toString = function () {
 	let current = this.head;
