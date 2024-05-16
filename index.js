@@ -14,3 +14,5 @@ console.log(`Values in the linked list: ${list.toString()}`);
 console.log(`List's head node is: '${list.listHead()}'`);
 console.log(`List's tail node is: '${list.listTail()}'`);
 console.log(`Node at index 3 is : ${list.atIndex(2)}`);
+list.nodePop();
+console.log(`Values in the linked list: ${list.toString()}`);

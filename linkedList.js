@@ -90,6 +90,16 @@ LinkedList.prototype.atIndex = function (index) {
 	return node.value;
 };
 
+LinkedList.prototype.nodePop = function () {
+	let node = this.head,
+		toBeDeleted;
+	while (node.nextNode) {
+		toBeDeleted = node;
+		node = node.nextNode;
+	}
+	toBeDeleted.nextNode = null;
+};
+
 LinkedList.prototype.toString = function () {
 	let current = this.head;
 	let string = '';
