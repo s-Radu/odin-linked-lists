@@ -53,7 +53,6 @@ LinkedList.prototype.prepend = function (value) {
 		this.head.nextNode = node;
 	}
 };
-// redo size, listHead and listTail ( try not to peak so much on notes )
 
 LinkedList.prototype.size = function () {
 	let count = 0;
@@ -101,6 +100,17 @@ LinkedList.prototype.nodePop = function () {
 		node = node.nextNode;
 	}
 	toBeDeleted.nextNode = null;
+};
+
+LinkedList.prototype.listContains = function (value) {
+	let node = this.head;
+	while (node) {
+		if (node.value === value) {
+			return true;
+		}
+		node = node.nextNode;
+	}
+	return false;
 };
 
 LinkedList.prototype.toString = function () {
