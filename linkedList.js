@@ -103,6 +103,7 @@ LinkedList.prototype.nodePop = function () {
 };
 
 LinkedList.prototype.listContains = function (value) {
+	if (!this.head) return 'No in the list.';
 	let node = this.head;
 	while (node) {
 		if (node.value === value) {
@@ -111,6 +112,20 @@ LinkedList.prototype.listContains = function (value) {
 		node = node.nextNode;
 	}
 	return false;
+};
+
+LinkedList.prototype.findIndex = function (value) {
+	if (!this.head) return 'No head in the list.';
+	let node = this.head;
+	let index = 0;
+	while (node) {
+		if (node.value === value) {
+			return index;
+		}
+		node = node.nextNode;
+		index++;
+	}
+	return null;
 };
 
 LinkedList.prototype.toString = function () {
