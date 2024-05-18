@@ -159,3 +159,16 @@ LinkedList.prototype.insertAt = function (value, index) {
 	prevNode.nextNode = newNode;
 	newNode.nextNode = currentNode;
 };
+
+LinkedList.prototype.removeAt = function (index) {
+	if (!this.head) return 'No list head.';
+	let currentNode = this.head;
+	let prevNode;
+
+	for (let i = 0; i < index; i++) {
+		if (!currentNode.nextNode) return `No node at index ${index}`;
+		prevNode = currentNode;
+		currentNode = currentNode.nextNode;
+	}
+	prevNode.nextNode = currentNode.nextNode;
+};
