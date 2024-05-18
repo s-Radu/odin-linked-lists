@@ -22,4 +22,5 @@ list.insertAt('inserted', 3);
 list.insertAt('another insert', 5);
 console.log(`Values in the linked list: ${list.toString()}`);
 list.removeAt(5);
+list.removeAt(52);
 console.log(`Values in the linked list: ${list.toString()}`);

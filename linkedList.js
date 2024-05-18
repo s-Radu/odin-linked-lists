@@ -166,7 +166,7 @@ LinkedList.prototype.removeAt = function (index) {
 	let prevNode;
 
 	for (let i = 0; i < index; i++) {
-		if (!currentNode.nextNode) return `No node at index ${index}`;
+		if (!currentNode.nextNode) return console.log(`No node at index ${index}`);
 		prevNode = currentNode;
 		currentNode = currentNode.nextNode;
 	}
