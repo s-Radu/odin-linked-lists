@@ -120,7 +120,7 @@ LinkedList.prototype.findIndex = function (value) {
 	let index = 0;
 	while (node) {
 		if (node.value === value) {
-			return index;
+			return `Index of ${value} is: ${index}`;
 		}
 		node = node.nextNode;
 		index++;
@@ -143,3 +143,19 @@ LinkedList.prototype.toString = function () {
 
 //* insertAt(value, index) that inserts a new node witht he provided value at the given index.
 //* removeAt(index) that removes the node of the given index.
+
+LinkedList.prototype.insertAt = function (value, index) {
+	if (!this.head) return 'No list head.';
+
+	let currentNode = this.head;
+	let prevNode;
+	const newNode = new Node(value);
+	for (let i = 0; i < index; i++) {
+		if (!currentNode.nextNode)
+			return 'The index provided does not exist in the list.';
+		prevNode = currentNode;
+		currentNode = currentNode.nextNode;
+	}
+	prevNode.nextNode = newNode;
+	newNode.nextNode = currentNode;
+};
